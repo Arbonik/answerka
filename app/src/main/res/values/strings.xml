@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Отвечайка!</string>
+    <string name="answerka">Отвечайка!</string>
+    <string name="new_game">Играть</string>
+    <string name="contin">Продолжить</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_players">Добавление игроков</string>
+    <string name="player_name_hint">Имя игрока</string>
+    <string name="add">Добавить</string>
+    <string name="done">Готово</string>
+    <string name="choose_hint">Отметьте тех, кто этого не делал</string>
+    <string name="ok">Ок</string>
+    <string name="next">Далее</string>
+    <string name="players">Игроки:</string>
+</resources>
