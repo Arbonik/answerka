@@ -1,6 +1,8 @@
 package com.arbonik.answerka
 
 import android.app.Application
+import com.yandex.metrica.YandexMetrica
+import com.yandex.metrica.YandexMetricaConfig
 import java.nio.charset.Charset
 
 
@@ -10,6 +12,7 @@ class AnswerkaApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        activateAppMetrica()
         loadStatement()
         loadTasks()
     }
@@ -64,5 +67,25 @@ class AnswerkaApplication : Application() {
     fun restart() {
         loadStatement()
         loadTasks()
+    }
+
+    private fun activateAppMetrica() {
+        val appMetricaConfig: YandexMetricaConfig =
+            YandexMetricaConfig.newConfigBuilder("a5e1f70e-0c4a-49a4-86eb-65c6a42ec651")
+                .handleFirstActivationAsUpdate(isFirstActivationAsUpdate())
+                .withLocationTracking(true)
+                .withStatisticsSending(true)
+                .build()
+        YandexMetrica.activate(applicationContext, appMetricaConfig)
+    }
+
+    private fun isFirstActivationAsUpdate(): Boolean {
+        val pref = getSharedPreferences("first",MODE_PRIVATE)
+        val result = pref.getBoolean("isFirst", true)
+        pref
+            .edit()
+            .putBoolean("isFirst", false)
+            .apply()
+        return result
     }
 }
