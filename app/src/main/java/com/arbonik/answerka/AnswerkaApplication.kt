@@ -1,6 +1,7 @@
 package com.arbonik.answerka
 
 import android.app.Application
+import com.google.android.gms.ads.MobileAds
 import com.yandex.metrica.YandexMetrica
 import com.yandex.metrica.YandexMetricaConfig
 import java.nio.charset.Charset
@@ -13,6 +14,7 @@ class AnswerkaApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         activateAppMetrica()
+        MobileAds.initialize(this){}
         loadStatement()
         loadTasks()
     }

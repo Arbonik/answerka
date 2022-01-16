@@ -31,15 +31,28 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text=" Саша, выпей стакан воды Саша, выпей стакан воды Саша, выпей стакан воды Саша, выпей стакан воды Саша, выпей стакан воды" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-5035053608244158/5508956984"
+        app:layout_constraintBottom_toTopOf="@+id/next_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasks"
+    />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/standart_margin"
-        android:text="@string/next"
         android:layout_marginBottom="@dimen/button_bottom_margin"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.800" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

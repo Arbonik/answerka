@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.arbonik.answerka.Repository
 import com.arbonik.answerka.data.OurTask
 import com.arbonik.answerka.databinding.FragmentTasksBinding
+import com.google.android.gms.ads.AdRequest
 
 class TasksFragment : Fragment() {
 
@@ -31,6 +32,9 @@ class TasksFragment : Fragment() {
             Repository.checkedNames.clear()
             findNavController().navigateUp()
         }
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
+
         return binding.root
     }
 
